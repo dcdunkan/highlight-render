@@ -251,7 +251,7 @@ export function getLineTokens2(
 
       const classes = Array
         .from(classList.values())
-        .filter((c) => c !== "function_")
+        // .filter((c) => c !== "function_") // TODO: deal with these kind of things later.
         .map((c) => `.${c}`);
 
       const token: Token2 = { text, color: "" };
