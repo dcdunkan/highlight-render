@@ -42,8 +42,8 @@ export const FONT_SIZE_PROPS: Record<
   },
 };
 
-const htmlString = Deno.readTextFileSync("hljs/indexy.html");
-const cssString = Deno.readTextFileSync("hljs/proper.css");
+const htmlString = Deno.readTextFileSync("hljs/test.html");
+const cssString = Deno.readTextFileSync("hljs/gh-dark.css");
 getLineTokens(htmlString, getColors(cssString));
 
 export function getColors(cssString: string) {

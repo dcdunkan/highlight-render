@@ -12,8 +12,8 @@ for (const { name } of Deno.readDirSync(FONT_DIR)) {
 }
 console.log(`Loaded ${fonts.length} fonts.`);
 
-const html = Deno.readTextFileSync("hljs/indexy.html");
-const cssString = Deno.readTextFileSync("hljs/proper.css");
+const html = Deno.readTextFileSync("hljs/test.html");
+const cssString = Deno.readTextFileSync("hljs/gh-dark.css");
 
 console.time("Render");
 const svg = await render(html, { css: cssString });
