@@ -19,7 +19,7 @@ console.time("Render");
 const svg = await render(html, { css: cssString });
 console.timeEnd("Render");
 
-Deno.writeFileSync("new.png", svg);
+Deno.writeFileSync("out.png", svg);
 
 export function render(
   htmlString: string,
