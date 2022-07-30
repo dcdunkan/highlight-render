@@ -1,0 +1,23 @@
+<html>
+
+<body>
+  <pre>
+    <table>
+      <tbody>
+        <tr><td class="code-line"><span class="hljs-comment">// helo ser</span></td></tr>
+        <tr><td class="code-line"><span class="hljs-keyword">const</span> csv2json = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;csvtojson&quot;</span>);</td></tr>
+        <tr><td class="code-line"></td></tr></td></tr>
+        <tr><td class="code-line"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-keyword">async</span> () =&gt; {</td></tr>
+        <tr><td class="code-line">  <span class="hljs-keyword">const</span> csv = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;https://track.aftership.com/couriers/download&quot;</span>);</td></tr>
+        <tr><td class="code-line">  <span class="hljs-keyword">let</span> csv_text = <span class="hljs-keyword">await</span> csv.<span class="hljs-title function_">text</span>();</td></tr>
+        <tr><td class="code-line">  csv_text = csv_text.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>);</td></tr>
+        <tr><td class="code-line">  csv_text.<span class="hljs-title function_">splice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;slug,name&quot;</span>);</td></tr>
+        <tr><td class="code-line">  csv_text = csv_text.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>);</td></tr>
+        <tr><td class="code-line">  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title function_">csv2json</span>().<span class="hljs-title function_">fromString</span>(csv_text);</td></tr>
+        <tr><td class="code-line">};</td></tr>
+      </tbody>
+    </table>
+  </pre>
+</body>
+
+</html>
